@@ -5,7 +5,25 @@
   height: 60vh;
   background: black;
   display: flex;
-  margin: auto;
+  float: left;
+  margin-left: 10vw;
   margin-top: 5vh !important;
   box-shadow: black 10px 10px 15px;
+}
+
+#customRange {
+  margin: auto;
+  margin-top: 10vh;
+  margin-left: 17vw;
+  width: 50vw;
+}
+
+#customVertRange {
+  float: right;
+  width: 60vw;
+  transform: rotate(270deg);
+}
+
+#canvasRow {
+  display: flex;
 }

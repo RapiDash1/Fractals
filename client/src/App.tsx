@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
 import {Koch} from "./components/koch";
-import {Coordinate} from "./components/koch"
+import {Coordinate} from "./components/coordinate";
+import {Tree} from "./components/tree";
 import './App.css';
 
 class App extends Component {
 
   _latestLines: Koch[] = [];
+  _latestTreeLines: Tree[] = [];
+  _treeAngle = 45;
+  _treeThickness = 10;
 
   constructor(props: any) {
     super(props);
     this.updateKochLines = this.updateKochLines.bind(this);
+    this.updateTreeLength = this.updateTreeLength.bind(this);
+    this.updateTreeAngle = this.updateTreeAngle.bind(this);
   }
 
   drawCircle(x: number, y: number, dia: number, ctx: CanvasRenderingContext2D) {
@@ -66,25 +72,70 @@ class App extends Component {
     this._latestLines.forEach(kochLine => {
       for (let pointPos: number = 0; pointPos < kochLine.allKochPoints().length - 1; pointPos++) {
         tempLatestLines.push(new Koch(kochLine.allKochPoints()[pointPos], kochLine.allKochPoints()[pointPos + 1 ]));
-        this.drawKochCruve(new Koch(kochLine.allKochPoints()[pointPos], kochLine.allKochPoints()[pointPos + 1 ]), ctx);
+        setTimeout(()=>{this.drawKochCruve(new Koch(kochLine.allKochPoints()[pointPos], kochLine.allKochPoints()[pointPos + 1 ]), ctx);}, 30);
       }
     });
     this._latestLines = tempLatestLines;  
   }
 
+
+  drawTree(baseTree: Tree, ctx: CanvasRenderingContext2D, lineWidth: number) {
+    ctx.beginPath();
+    ctx.strokeStyle = "#FFFFFF";
+    ctx.lineWidth = lineWidth;
+    ctx.moveTo(baseTree.root().x(), baseTree.root().y());
+    ctx.lineTo(baseTree.secondPoint().x(), baseTree.secondPoint().y());
+    ctx.lineTo(baseTree.pointLeft().x(), baseTree.pointLeft().y());
+    ctx.moveTo(baseTree.secondPoint().x(), baseTree.secondPoint().y());
+    ctx.lineTo(baseTree.pointRight().x(), baseTree.pointRight().y());
+    ctx.stroke();
+  }
+
+  updateTreeLength() {
+    let canvas = document.getElementById("fractalCanvas") as HTMLCanvasElement;
+    let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+    let tempLatestTreeLines: Tree[] = [];
+    this._treeThickness *= 0.8;
+    this._latestTreeLines.forEach(treeLine=> {
+      tempLatestTreeLines.push(new Tree(treeLine.secondPoint(), treeLine.pointRight(), this._treeAngle));
+      tempLatestTreeLines.push(new Tree(treeLine.secondPoint(), treeLine.pointLeft(), this._treeAngle));
+      this.drawTree(new Tree(treeLine.secondPoint(), treeLine.pointRight(), this._treeAngle), ctx, this._treeThickness);
+      this.drawTree(new Tree(treeLine.secondPoint(), treeLine.pointLeft(), this._treeAngle), ctx, this._treeThickness);
+    });
+    this._latestTreeLines = tempLatestTreeLines;
+  }
+
+
+  updateTreeAngle() {
+    let inputSlider = document.getElementById("customVertRange") as HTMLInputElement;
+    this._treeAngle = Number(inputSlider.value);
+    console.log(this._treeAngle);
+  }
+
   componentDidMount() {
     let canvas = document.getElementById("fractalCanvas") as HTMLCanvasElement;
+    let ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-    this._latestLines = [new Koch(new Coordinate(canvas.width*0.1, canvas.height/2), new Coordinate(canvas.width*0.9, canvas.height/2))];
+    this._latestTreeLines = [new Tree(new Coordinate(canvas.width/2, canvas.height), new Coordinate(canvas.width/2, canvas.height*(3/4)), 45)];
+    // this.drawTree(new Tree(new Coordinate(canvas.width/2, canvas.height), new Coordinate(canvas.width/2, canvas.height*(3/4))), ctx, 0);
+    // this._latestLines = [new Koch(new Coordinate(canvas.width*0.3, canvas.height/3), new Coordinate(canvas.width*0.7, canvas.height/3)),
+    //   new Koch(new Coordinate(canvas.width*0.7, canvas.height/3), new Coordinate(canvas.width*0.5, (canvas.height/3 + (canvas.width*0.4)/Math.sqrt(2)))),
+    //   new Koch(new Coordinate(canvas.width*0.5, (canvas.height/3 + (canvas.width*0.4)/Math.sqrt(2))), new Coordinate(canvas.width*0.3, canvas.height/3 ))
+    // ];
     // this.drawCircle(canvas.width/2, canvas.height/2, 350, ctx);
-    // this.drawTriangle(300, 600, 300, ctx);
+    // this.drawTriangle(300, 600, 300, canvas.getContext("2d") as CanvasRenderingContext2D);
   }
 
   render() {
     return (
       <div>
-        <canvas id="fractalCanvas" onClick={this.updateKochLines}></canvas>
+        <div id="canvasRow">
+          <canvas id="fractalCanvas" /*onClick={this.updateKochLines}*/></canvas>
+          <input type="range" className="custom-range" min="-90" max="90" step="15" id="customVertRange" defaultValue="-90" onChange={this.updateTreeAngle}></input>
+        </div>
+        {/* <label for="customRange3">Example range</label> */}
+      <input type="range" className="custom-range" min="-90" max="90" step="15" id="customRange" defaultValue="-90" onChange={this.updateTreeLength}></input>
       </div>
     );
   }
