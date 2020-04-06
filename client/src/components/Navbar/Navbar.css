@@ -30,12 +30,13 @@ nav {
     color: white;
     background-color: black;
     box-shadow: white 0px 3px 7px 0px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease-in-out;
 }
 
 .fractal-selection-active {
-    opacity: 100%;
+    transform: translateY(0%);
 }
 
 .fractal-dropdown {
@@ -70,12 +71,13 @@ nav {
     color: white;
     background-color: black;
     box-shadow: white 0px 3px 7px 0px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: transform 0.2s ease-in-out;
 }
 
 .Social-Media-selection-active {
-    opacity: 100%;
+    transform: translateY(0%);
 }
 
 .Social-Media-dropdown {
