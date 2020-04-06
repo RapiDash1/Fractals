@@ -1,0 +1,94 @@
+nav {
+    height: 10vh;
+    background-color: rgb(0, 0, 0);
+    box-shadow: black 10px 5px 12px;
+    margin-top: 0;
+}
+
+.nav-links {
+    display: flex;
+    float: right;
+    margin-right: 10vw;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 10vh;
+    margin-top: 0;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+.Fractals {
+    cursor: pointer;
+}
+
+.fractal-selection {
+    position: fixed;
+    right: 26vw;
+    top: 8vh;
+    color: white;
+    background-color: black;
+    box-shadow: white 0px 3px 7px 0px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.fractal-selection-active {
+    opacity: 100%;
+}
+
+.fractal-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    width: 10vw;
+}
+
+.fractal-dd-item {
+    padding-top: 3vh;
+    cursor: pointer;
+}
+
+#social-media-element {
+    text-decoration: none;
+    color: white;
+}
+
+.Social-Media {
+    cursor: pointer;
+}
+
+.Social-Media-selection {
+    position: fixed;
+    right: 13vw;
+    top: 8vh;
+    color: white;
+    background-color: black;
+    box-shadow: white 0px 3px 7px 0px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.Social-Media-selection-active {
+    opacity: 100%;
+}
+
+.Social-Media-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    width: 10vw;
+}
+
+.Social-Media-dd-item {
+    padding-top: 3vh;
+}

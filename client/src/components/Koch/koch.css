@@ -1,0 +1,19 @@
+#generateKochCurveButton {
+    margin-left: 16vw;
+    box-shadow: black 2px 2px 6px !important;
+}
+
+#resetButton {
+    margin-left: 6vw;
+    box-shadow: black 2px 2px 6px !important;
+}
+
+#customRange1 {
+    width: 30vw;
+    margin-left: 6vw;
+    margin-top: 0;
+}
+
+#fractal-dd-item {
+    cursor: pointer;
+}
