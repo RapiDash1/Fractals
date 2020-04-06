@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "abd7f2c2d536a84c9edc7102866c8ea6",
+    "revision": "ab407b3f2cd9cac12e18930495ab9012",
     "url": "/Fractals/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Fractals/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "05dce8fde5ecd623dc53",
-    "url": "/Fractals/static/css/main.7f8d1385.chunk.css"
+    "revision": "677bcdeafb3c236b66c6",
+    "url": "/Fractals/static/css/main.e63926bb.chunk.css"
   },
   {
     "revision": "c7904287df7fb3b9b7ff",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Fractals/static/js/2.f062d16f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "05dce8fde5ecd623dc53",
+    "revision": "677bcdeafb3c236b66c6",
     "url": "/Fractals/static/js/main.7c116ac3.chunk.js"
   },
   {
