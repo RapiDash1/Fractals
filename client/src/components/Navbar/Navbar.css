@@ -36,6 +36,7 @@ nav {
 }
 
 .fractal-selection-active {
+    z-index: 0;
     transform: translateY(0%);
 }
 
@@ -77,6 +78,7 @@ nav {
 }
 
 .Social-Media-selection-active {
+    z-index: 0;
     transform: translateY(0%);
 }
 
