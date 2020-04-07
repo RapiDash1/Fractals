@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Fractals/static/css/main.e63926bb.chunk.css",
-    "main.js": "/Fractals/static/js/main.7c116ac3.chunk.js",
-    "main.js.map": "/Fractals/static/js/main.7c116ac3.chunk.js.map",
+    "main.css": "/Fractals/static/css/main.3e3c93a1.chunk.css",
+    "main.js": "/Fractals/static/js/main.d77f5d00.chunk.js",
+    "main.js.map": "/Fractals/static/js/main.d77f5d00.chunk.js.map",
     "runtime-main.js": "/Fractals/static/js/runtime-main.07b392f1.js",
     "runtime-main.js.map": "/Fractals/static/js/runtime-main.07b392f1.js.map",
     "static/css/2.de424728.chunk.css": "/Fractals/static/css/2.de424728.chunk.css",
     "static/js/2.f062d16f.chunk.js": "/Fractals/static/js/2.f062d16f.chunk.js",
     "static/js/2.f062d16f.chunk.js.map": "/Fractals/static/js/2.f062d16f.chunk.js.map",
     "index.html": "/Fractals/index.html",
-    "precache-manifest.9662e8414fc0b73a3db54a8ee9323342.js": "/Fractals/precache-manifest.9662e8414fc0b73a3db54a8ee9323342.js",
+    "precache-manifest.b247710d2abbd64900b9bbfe24826999.js": "/Fractals/precache-manifest.b247710d2abbd64900b9bbfe24826999.js",
     "service-worker.js": "/Fractals/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/Fractals/static/css/2.de424728.chunk.css.map",
-    "static/css/main.e63926bb.chunk.css.map": "/Fractals/static/css/main.e63926bb.chunk.css.map",
+    "static/css/main.3e3c93a1.chunk.css.map": "/Fractals/static/css/main.3e3c93a1.chunk.css.map",
     "static/js/2.f062d16f.chunk.js.LICENSE.txt": "/Fractals/static/js/2.f062d16f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.07b392f1.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.f062d16f.chunk.js",
-    "static/css/main.e63926bb.chunk.css",
-    "static/js/main.7c116ac3.chunk.js"
+    "static/css/main.3e3c93a1.chunk.css",
+    "static/js/main.d77f5d00.chunk.js"
   ]
 }
