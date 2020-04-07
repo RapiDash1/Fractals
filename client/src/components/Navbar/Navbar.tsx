@@ -22,10 +22,12 @@ export class Navbar extends React.Component<{ parentCallback: (message: string) 
     }
 
     handleKochCurveClick() {
+        this.handleFractalClick();
         this.props.parentCallback("Koch curve");
     }
 
     handleTreeClick() {
+        this.handleFractalClick();
         this.props.parentCallback("tree");
     }
 
@@ -41,8 +43,8 @@ export class Navbar extends React.Component<{ parentCallback: (message: string) 
                     </div>
                     <div className="Social-Media-selection">
                         <ul className="Social-Media-dropdown">
-                            <li className="Social-Media-dd-item"><a href="https://www.instagram.com/sri._vatsa/" target="_blank" id="social-media-element">Instagram</a></li>
-                            <li className="Social-Media-dd-item"><a href="https://twitter.com/SrivatsaM11" target="_blank" style={{textDecoration: "none"}} id="social-media-element">Twitter</a></li>
+                            <li className="Social-Media-dd-item"><a href="https://www.instagram.com/sri._vatsa/" target="_blank" id="social-media-element" onClick={this.handleSocialMediaClick}>Instagram</a></li>
+                            <li className="Social-Media-dd-item"><a href="https://twitter.com/SrivatsaM11" target="_blank" style={{textDecoration: "none"}} id="social-media-element" onClick={this.handleSocialMediaClick}>Twitter</a></li>
                         </ul>
                     </div>
                     <ul className="nav-links">

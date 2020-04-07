@@ -84,9 +84,12 @@ export class KochElement extends React.Component {
                 <div id="canvasRow">
                     <canvas id="fractalCanvas"></canvas>
                 </div>
-                <Button variant="dark" id="generateKochCurveButton" onClick={this.updateKochLines}>Generate curve</Button>
-                <input type="range" className="custom-range" id="customRange1" defaultValue="50" min="25" max="100" />
-                <Button variant="dark" id="resetButton" onClick={this.resetCanvas}>Reset canvas</Button>
+                <div id="sliderElement">
+                    <Button variant="dark" id="generateKochCurveButton" onClick={this.updateKochLines}>Generate curve</Button>
+                    <h5 className="speedName">Speed</h5>
+                    <input type="range" className="custom-range" id="customRange1" defaultValue="50" min="25" max="100" />
+                    <Button variant="dark" id="resetButton" onClick={this.resetCanvas}>Reset canvas</Button>
+                </div>
             </div>
         );
     }

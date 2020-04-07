@@ -19,13 +19,6 @@
   width: 40vw;
 }
 
-#customVertRange {
-margin: auto;
-margin-left: 5vw;
-width: 90vw;
-transform: rotate(270deg);
-}
-
 #canvasRow {
   display: flex;
   height: 70vh;

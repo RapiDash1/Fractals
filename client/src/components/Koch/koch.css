@@ -1,5 +1,5 @@
 #generateKochCurveButton {
-    margin-left: 16vw;
+    margin-left: 14vw;
     box-shadow: black 2px 2px 6px !important;
 }
 
@@ -10,10 +10,19 @@
 
 #customRange1 {
     width: 30vw;
-    margin-left: 6vw;
+    margin-left: 3vw;
     margin-top: 0;
+}
+
+.speedName {
+    margin-left: 3vw;
 }
 
 #fractal-dd-item {
     cursor: pointer;
+}
+
+#sliderElement {
+    display: flex;
+    margin: 0;
 }

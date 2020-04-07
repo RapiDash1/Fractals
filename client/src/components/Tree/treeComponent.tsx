@@ -94,10 +94,16 @@ export class TreeElement extends React.Component {
             <div>
             <div id="canvasRow">
                 <canvas id="fractalCanvas"></canvas>
-                <input type="range" className="custom-range" min="-90" max="90" step="15" id="customVertRange" defaultValue="-90" onChange={this.updateTreeAngle}></input>
+                <div id="angle-slider">
+                    <input type="range" className="custom-range" min="-90" max="90" step="15" id="customVertRange" defaultValue="-90" onChange={this.updateTreeAngle}></input>
+                    <h5 id="angle-name">Angle</h5>
                 </div>
-                <input type="range" className="custom-range" min="-90" max="90" step="15" id="customRange" defaultValue="-90" onChange={this.updateTreeLength}></input>
-                <Button variant="dark" id="resetTreeButton" onClick={this.resetCanvas}>Reset canvas</Button>   
+            </div>
+                <div id="classNametreeManipulators">
+                    <h5 id="tree-length-name">Tree Length</h5>
+                    <input type="range" className="custom-range" min="-90" max="90" step="15" id="customRange" defaultValue="-90" onChange={this.updateTreeLength}></input>
+                    <Button variant="dark" id="resetTreeButton" onClick={this.resetCanvas}>Reset canvas</Button>   
+                </div>
             </div>
         );
     }
